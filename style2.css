@@ -13,13 +13,14 @@
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-      background: purple;
+      background: slateblue;
       border-radius: 8px;
     }
 
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
       background: green;
+      border-radius: 12px;
     }
 
     .button {
@@ -42,7 +43,7 @@
       background-color: green;
     }
     .button1:hover {
-      background-color: black;
+      background-color: slateblue;
       color: white;
 
     }
