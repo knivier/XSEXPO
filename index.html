@@ -1,145 +1,209 @@
 <!DOCTYPE html>
-<html> <!---->
-  <head>
-    <meta charset="utf-8" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XSCeon Official</title>
-  </head>
-  <link rel="stylesheet" type="text/css" href="style.css" /> 
-  <body style="background-color: black; color: white">
-    <div
-      class="page"
+    <style>
+        :root {
+            --primary-color: #00ff9d;
+            --secondary-color: #ff00ff;
+            --bg-color: #121212;
+            --text-color: #ffffff;
+            --card-bg-color: #1e1e1e;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: var(--bg-color);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+        }
+        
+        .section {
+            padding: 5px 0;
+        }
+        
+        .card {
+            background-color: var(--card-bg-color);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        footer {
+            background-color: var(--card-bg-color);
+            color: var(--text-color);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#statement">Our Statement</a></li>
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="#servers">Previous Servers</a></li>
+            </ul>
+        </nav>
+    </header>
 
-      style="width: 90%; margin: auto; background-color: rgb(49, 49, 49); border-radius: 15px"
-    >
-      <header>
-        <h1 style="text-align: center; color: rgba(0, 151, 68, 0.874)">
-          XS Official Site
-        </h1>
-        <h4 style="margin: auto; text-align: center;">
-          <form action="page2.html" method="get">
-            <button class="button button1" type="submit" onclick="myFunction()">
-              <b>XS-2019 Updates</b>
-            </button>
-          </form>
-        </h4>
-      </header>
-      <hr
-        style="
-          height: 4px;
-          border-width: 0;
-          color: black;
-          background-color: black;
-        "
-      />
-      <section>
-        <h2 style="text-align: center; color: rgba(0, 151, 68, 0.874)">
-          Our Statement
-        </h2>
-        <p style="color: red; text-align: center">
-          <em style="font-size: 16px;">
-            <b>
-              A Minecraft server of any type created under the influence of the team at XS supports the following statement with CORRSE:</b
-            ><br />
-            <blockquote style = "font-size: 32px;">
-              An operating server ran by XS should never allow the use of any types of administrator/staff abuse or ANY role higher than the player disallowing misconduct, plugin exploitation, or any other unfair means for player advantages for their own selfish needs or others.
-            </blockquote>
-          </em>
-        </p>
-      </section>
-      <hr
-        style="
-          height: 4px;
-          border-width: 0;
-          color: black;
-          background-color: black;
-        "
-      />
-      <section>
-<section style="text-align: center;">
-        <h2 style="text-align: center; color: rgba(0, 151, 68, 0.874)">
-Our Team        </h2>
-        <p style="text-indent: 20px;">With the XS teams actual playercount being privately selected, a large team isn't a necessity to running the server. Administrator power is spread among few individuals, and moderation and server optimizaiton is always our teams main focus. 
-        </p>
-</section>
-      </section>
-      <hr
-        style="
-          height: 4px;
-          border-width: 0;
-          color: black;
-          background-color: black;
-        "
-      />      
-      <section>
-        <h2 style="text-align: center; color: rgba(0, 151, 68, 0.874)">
-          Previous Servers
-        </h2>
-          <p style="">
-          I'm sure you can't just take all of our statements into account
-          without some examples of servers we've ran. Well, we have run servers,
-          and helped smaller servers achieve success. While smaller communities
-          will be kept anonymous, we can state our own creations. We've created
-          an anarchy server, and an SMP that's still running!
-        </p>
-          <h3 style = "text-indent: 20px;">Vex Anarchy</h3>
-          <p style="text-indent: 20px;">
-          From the newly created anarchy server rose two people creating the
-          greatness now known as XS. Leo and Ness both founded Vex Anarchy; a
-          colossal success of an anarchy server. While keeping admin abuse to
-          it's minimums, Vex Anarchy ran for around 2<sup>1/2</sup> years. With
-          over 80 unique joins, it's safe to say with the wars and history build
-          within the server by its community, the server was a success. <br />
-          Vex Anarchy was later brought down in early 2020 due to a new server
-          being ran (see below) that would shift priorities leaving Vex to
-          dwindle.
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>XSCeon Official</h1>
+                <p>Experience a kind community with a rich history.</p>
+                <a href="page2.html" class="btn">XS-2019 Updates</a>
+            </div>
+        </section>
 
-          For its backstory, the Medium link is as follows: https://medium.com/@nessleickons/vexlys-history-96
-        </p>
-        <h3 style = "text-indent: 20px;">XSCeon-2019</h3>
-            <p style="">
-          With a huge degree in success and an experiment gone right, the two
-          team members expanded and created a newer server. This server would be
-          the best server ran by XS called XS19. <br />
-          With a privately invited seleciton of players, lore, wars, XS19 was a
-          social success with more than 19 players and 4 veterans. Starting in
-          late 2019, the server increased in popularity after SARS-Cov2 hit and
-          became the pandemic we know today. With online becoming the new thing,
-          more people joined causing the server to have much more
-          interest.Throughout its history, XS19 had to keep conforming within
-          its statement to satisfy players. Unfortunatly after early 2022, the
-          server died out causing a massive overhaul and a leap attempt in early
-          2023.
-        </p>
-      </section>
-      <footer style="background-color: rgb(35, 35, 35)">
-        <hr
-          style="
-            height: 4px;
-            border-width: 0;
-            color: black;
-            background-color: black;
-          "
-        />
+        <section id="statement" class="section">
+            <div class="container">
+                <h2>Our Statement</h2>
+                <div class="card">
+                    <p>An operating server ran by XS should never allow the use of any types of administrator/staff abuse or ANY role higher than the player disallowing misconduct, plugin exploitation, or any other unfair means for player advantages for their own selfish needs or others.</p>
+                </div>
+            </div>
+        </section>
 
-      <footer style="background-color: rgb(35, 35, 35); height: 40px; display: flex; justify-content: center; align-items: center;">
-        <hr
-          style="
-            height: 2px;
-            border-width: 0;
-            color: black;
-            background-color: black;
-          "
-        />
-        <p><em>&copy;2022 Ness Je'y Leickons x Leo Je'y Leickons</em></p>
-      </footer>
-    </div>
-    <hr
-      style="
-        height: 4px;
-        border-width: 0;
-        color: black;
-        background-color: black;
-      "
-    />
-  </body>
+        <section id="team" class="section">
+            <div class="container">
+                <h2>Our Team</h2>
+                <div class="card">
+                    <p>With the XS team's actual player count being privately selected, a large team isn't a necessity to running the server. Administrator power is spread among few individuals, and moderation and server optimization is always our team's main focus.</p>
+                </div>
+            </div>
+        </section>
+      
+
+        <section id="servers" class="section">
+            <div class="container">
+                <h2>Previous Servers</h2>
+                <div class="card">
+                    <h3>Vex Anarchy</h3>
+                    <p>From the newly created anarchy server rose two people creating the greatness now known as XS. Leo and Ness both founded Vex Anarchy; a colossal success of an anarchy server. While keeping admin abuse to its minimums, Vex Anarchy ran for around 2½ years with over 80 unique joins.</p>
+                </div>
+                <div class="card">
+                    <h3>XSCeon-2019</h3>
+                    <p>With a huge degree of success and an experiment gone right, the two team members expanded and created a newer server. This server would be the best server ran by XS called XS19. With a privately invited selection of players, lore, wars, XS19 was a social success with more than 19 players and 4 veterans.</p>
+                </div>
+            </div>
+        </section>
+        <section id="team" class="section">
+            <div class="container">
+              <h2>Server Stats</h2>
+              <p>Our server has been alive since January of 2020, making it alive for around 5 years now! What we've done: </p>
+              <ul>
+                <li>Amassed over 2GB in map size</li>
+                <li>Been online for nearly 1000 days or 330+ hours</li>
+                <li>Seen over 25 players</li>
+                  <li>
+                      Had over 4 wars and 12 timeline events/ages
+                  </li>
+                  <li>Developed 2 still-alive communities (XS and Yeons) with 4 dead groups</li>
+              </ul>
+            </div>
+          </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Ness Je'y Leickons x Leo Je'y Leickons</p>
+        </div>
+    </footer>
+</body>
 </html>
