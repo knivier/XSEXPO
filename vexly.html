@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vexly Clan - XSCeon Official</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #1a1a2e;
+            --bg-medium: #16213e;
+            --bg-light: #0f3460;
+            --text-primary: #e5e5e5;
+            --text-secondary: #f1f1f1;
+            --accent-color: #7e22ce; /* Purple accent for Vexly */
+            --hover-color: #6b21a8;
+            --second-accent: #c026d3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background-color 0.3s ease;
+        }
+
+        .page {
+            width: 90%; 
+            margin: 2rem auto; 
+            background-color: var(--bg-medium);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease-out;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .clan-logo {
+            width: 120px;
+            height: 120px;
+            background-color: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 0 15px rgba(126, 34, 206, 0.5);
+        }
+
+        .clan-logo span {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            text-shadow: 0 0 5px rgba(126, 34, 206, 0.7);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(126, 34, 206, 0.3);
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--second-accent);
+            margin: 1.5rem 0 1rem;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent-color), var(--second-accent));
+            border-radius: 10px 0 0 10px;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        li {
+            background-color: rgba(0,0,0,0.3);
+            margin: 0.5rem 0;
+            padding: 0.75rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        li:hover {
+            background-color: rgba(0,0,0,0.5);
+            transform: translateX(5px);
+        }
+
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .stat-box {
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            padding: 1.5rem;
+            width: calc(50% - 0.75rem);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-box::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--accent-color), var(--second-accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .stat-box:hover::after {
+            transform: scaleX(1);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            height: 200px;
+            background-color: var(--bg-medium);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .gallery-item:hover .gallery-placeholder {
+            border-color: var(--accent-color);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            font-size: 0.9rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 5px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            color: var(--accent-color);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--hover-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Orbitron', sans-serif;
+            margin-top: 1rem;
+        }
+
+        .button:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .member-card {
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .member-avatar {
+            width: 100%;
+            height: 150px;
+            background-color: var(--bg-medium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+        }
+
+        .member-info {
+            padding: 1rem;
+        }
+
+        .member-name {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--second-accent);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .equipment-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .equipment-set {
+            flex: 1 1 300px;
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(126, 34, 206, 0.3);
+        }
+
+        .equipment-set:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border-color: var(--accent-color);
+        }
+
+        .equipment-title {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .equipment-image {
+            width: 100%;
+            height: 200px;
+            background-color: var(--bg-medium);
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .equipment-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(126, 34, 206, 0.2) 0%, rgba(14, 14, 22, 0) 70%);
+            animation: pulse 3s infinite;
+        }
+
+        .equipment-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+        }
+
+        .equipment-spec {
+            margin-top: 0.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 2rem;
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--hover-color);
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .page {
+                width: 95%;
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .stat-box {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .equipment-container {
+                flex-direction: column;
+            }
+
+            .stats-container {
+                flex-direction: column;
+            }
+
+            .clan-logo {
+                width: 90px;
+                height: 90px;
+            }
+
+            .clan-logo span {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div class="clan-logo">
+                <span>V</span>
+            </div>
+            <h1>Vexly Clan</h1>
+            <p>XSCeon's First & Most Legendary Clan</p>
+            <a href="#" class="button" onclick="return false;">
+                Server Home
+            </a>
+        </header>
+
+        <section>
+            <h2>About Vexly</h2>
+            <p>Founded 5 years ago as the first clan on XSCeon, Vexly has dominated the server with strategy, loyalty, and unmatched skill. We've survived through multiple seasons, outlasting every challenger and cementing our legacy as XSCeon's elite.</p>
+            
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">Years since the dawn</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Vexians</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">2</div>
+                    <div class="stat-label">God Armor Sets</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">1st</div>
+                    <div class="stat-label">Original XSCeon Clan</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Clan Members</h2>
+            <p>Our strength comes from our carefully selected elite warriors, each bringing unique skills to Vexly.</p>
+            
+            <!-- <div class="members-grid">
+                <div class="member-card">
+                    <div class="member-avatar">V</div>
+                    <div class="member-info">
+                        <div class="member-name">VexLord</div>
+                        <div class="member-role">Clan Leader & Founder</div>
+                    </div>
+                </div>
+            </div> -->
+        </section>
+
+        <!-- <section>
+            <h2>Legendary Equipment</h2>
+            <p>Our clan controls two of the most powerful armor sets ever created on XSCeon.</p>
+            <div class="equipment-container">
+                <div class="equipment-set">
+                    <div class="equipment-title">Kronos God Set</div>
+                    <div class="equipment-image">
+                        <div class="equipment-icon">⚔️</div>
+                    </div>
+                    <div class="equipment-spec">Protection 5 Netherite Armor</div>
+                    <div class="equipment-spec">Sharpness 5 Sword</div>
+                    <div class="equipment-spec">Efficiency 5 Tools</div>
+                    <div class="equipment-spec">Custom Enchantments</div>
+                </div>
+                <div class="equipment-set">
+                    <div class="equipment-title">Tartarus God Set</div>
+                    <div class="equipment-image">
+                        <div class="equipment-icon">🛡️</div>
+                    </div>
+                    <div class="equipment-spec">Protection 10 Netherite Armor</div>
+                    <div class="equipment-spec">Rare Armor Trims</div>
+                    <div class="equipment-spec">Life & Death Potions</div>
+                    <div class="equipment-spec">Sharpness 7 Sword</div>
+                </div>
+            </div>
+        </section> -->
+
+        <section>
+            <h2>Gallery</h2>            
+            <div class="gallery-container">
+                <div class="gallery-item" onclick="openLightbox('assets/gurredefeme.png', 'La Gurre De Feme Statue')">
+                    <img src="assets/gurredefeme.png" alt="La Gurre De Feme Statue" class="gallery-placeholder">
+                    <div class="gallery-caption">La Gurre De Feme Statue</div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('assets/base-1.png', 'The Vexian Home Land')">
+                    <img src="assets/base-1.png" alt="The Vexian Home Land" class="gallery-placeholder">
+                    <div class="gallery-caption">The Vexian Home Land</div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('assets/xs-gold-farm.png', 'The largest gold farm, owned by Vexians')">
+                    <img src="assets/xs-gold-farm.png" alt="The largest gold farm, owned by Vexians" class="gallery-placeholder">
+                    <div class="gallery-caption">The largest gold farm, owned by Vexians</div>
+                </div>
+                
+                <div class="gallery-item" onclick="openLightbox('assets/vex-rails.png', 'We own the entire rail transportation network, including in our home')">
+                    <img src="assets/vex-rails.png" alt="We own the entire rail transportation network, including in our home" class="gallery-placeholder">
+                    <div class="gallery-caption">We own the entire rail transportation network, including in our home</div>
+                </div>
+        </section>
+
+        <section>
+            <h2>Clan Achievements</h2>
+            <p>Over our 5-year history, we've cemented our legacy with numerous server achievements.</p>
+            
+            <ul>
+                <li><b>Season 6:</b> First clan to obtain a full set of Netherite armor and tools</li>
+                <li><b>Season 7:</b> Controlled the End dimension for the entire season</li>
+                <li><b>Season 8:</b> Built the largest automated storage system on the server</li>
+                <li><b>Season 9:</b> Acquired the Kronos God Set in the first crate drop</li>
+                <li><b>Season 9:</b> Secured the Tartarus God Set after defeating the XS Clan</li>
+                <li><b>Season 10:</b> Currently building the most advanced redstone base in XSCeon history</li>
+            </ul>
+        </section>
+
+        <div class="lightbox" id="lightbox">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <div class="lightbox-content">
+                <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            </div>
+        </div>
+
+        <footer>
+            <p>Vexly Clan &copy; 2024 • XSCeon Minecraft Server</p>
+        </footer>
+    </div>
+
+    <script>
+        // Animate sections on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    section.style.transition = 'all 0.8s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, 300 * (index + 1));
+            });
+
+            // Add floating animation to some elements
+            const statBoxes = document.querySelectorAll('.stat-box');
+            statBoxes.forEach((box, index) => {
+                box.style.animation = `float 4s ease-in-out ${index * 0.5}s infinite`;
+            });
+        });
+
+        // Lightbox functionality
+        function openLightbox(src, alt) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            
+            lightboxImg.src = src;
+            lightboxImg.alt = alt;
+            
+            lightbox.style.display = 'flex';
+            setTimeout(() => {
+                lightbox.classList.add('active');
+            }, 10);
+            
+            // Prevent body scrolling when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            
+            lightbox.classList.remove('active');
+            setTimeout(() => {
+                lightbox.style.display = 'none';
+            }, 300);
+            
+            // Re-enable body scrolling
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox when clicking outside the image
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
